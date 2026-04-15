@@ -29,12 +29,12 @@ int main(int argc, char *argv[]) {
   // Receive date from the client
   char buffer[1024] = {0};
   recv(clientSocket, buffer, sizeof(buffer), 0);
-  std::cout << "Message from the client: " << buffer << '\n';
 
   // Send response
   const char *message = {
       " HTTP/1.1 200 OK \nContent-Type: text/plain\n Hello World "};
   send(clientSocket, message, strlen(message), 0);
+
   std::cout << "message: " << message << '\n';
 
   close(serverSocket);

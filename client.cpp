@@ -17,7 +17,8 @@ int main(int argc, char *argv[]) {
           sizeof(serverAddress));
 
   // Send message
-  const char *message = "Hello, Server. Send me secret password.";
+  // const char *message = "Hello, Server. Send me secret password.";
+  const char *message = "GET / HTTP/1.1\n Host: localhost:8080";
   send(clientSocket, message, strlen(message), 0);
 
   char buffer[1024] = {0};
